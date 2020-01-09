@@ -1,14 +1,16 @@
 {
-  "name": "react-three-fiber-lunch-n-learn",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "react-three-fiber-deck",
+  "private": true,
   "scripts": {
-    "start": "mdx-deck deck.mdx"
+    "start": "gatsby develop",
+    "build": "gatsby build --prefix-paths && mv public docs"
   },
   "devDependencies": {
-    "code-surfer": "^3.0.0",
-    "mdx-deck": "^3.0.13"
+    "code-surfer": "3.0.0",
+    "gatsby": "2.18.4",
+    "gatsby-plugin-compile-es6-packages": "2.1.0",
+    "gatsby-theme-mdx-deck": "3.0.13",
+    "mdx-deck": "3.0.13"
   },
   "resolutions": {
     "mdx-deck/**/gatsby": "2.18.4"
