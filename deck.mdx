@@ -1,0 +1,110 @@
+import { Appear } from 'mdx-deck'
+import { CodeSurfer } from "code-surfer"
+import customTheme from './theme';
+
+export const theme = customTheme;
+
+# react-three-fiber
+
+---
+
+# What is it?
+
+<ul>
+  <Appear>
+    <li>React renderer for Three.js</li>
+    <li>targets both web and react-native</li>
+    <li>Created by Paul Henschel (drcmda / 0xca0a)</li>
+    <li>Under the react-spring org in github</li>
+  </Appear>
+</ul>
+
+---
+
+# Ok so why?
+
+---
+
+<CodeSurfer>
+
+```js file=./basic-three-js.js title="Example Three.js code"
+```
+
+```js 1:7 file=./basic-three-js.js title="Create a scene"
+```
+
+```js 9:12 file=./basic-three-js.js title="Create a box and add it to the scene"
+```
+
+```js 14 file=./basic-three-js.js title="Move the camera so we can see the box"
+```
+
+```js 16:23 file=./basic-three-js.js title="Render loop" 
+```
+
+```js file=./basic-three-js.js title="Such imperative. Wow."
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```js file=./basic-react-three-fiber.1.js title="Example react-three-fiber code"
+```
+
+```js 6 file=./basic-react-three-fiber.1.js title="Create a scene"
+```
+
+```js file=./basic-react-three-fiber.2.js title="Create a box and add it to the scene"
+```
+
+```js file=./basic-react-three-fiber.js title="Render loop"
+```
+
+```js file=./basic-react-three-fiber.js
+```
+
+</CodeSurfer>
+
+---
+
+# `<Canvas>`
+
+- antialiasing and translucent
+- shadowmapping
+- default perspective camera
+- three.js scene and raycaster
+- resize observer
+
+---
+
+# Lets run that code!
+
+[Three.js](https://codesandbox.io/s/threejs-basic-cube-bt42h)
+
+[react-three-fiber](https://codesandbox.io/s/react-three-fiber-basic-cube-20pu8)
+
+---
+
+# Events
+
+- works on objects with a `raycast` method (meshes, lines etc)
+- `onClick`, `onWheel`, `Pointer` events, and `onUpdate`
+- events propagate starting with the closest to the camera
+  - `stopPropagation` to prevent further propagation
+
+---
+
+# Hooks
+
+- `useThree`: allows accessing the `SharedCanvasContext`
+  - useful for accessing the scene, default camera, viewport, etc.
+- `useFrame`: callback for every frame
+  - useful for running effects, updating controls, etc.
+- `useResource`: creates a ref and re-renders the component when available
+  - useful for sharing/reusing resources
+- `useUpdate`: imperative updates
+- `useLoader`: loading assets (uses `Suspense`)
+- `useCamera`: raycasting from the non-default camera

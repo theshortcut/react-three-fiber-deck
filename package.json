@@ -1,0 +1,16 @@
+{
+  "name": "react-three-fiber-lunch-n-learn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  },
+  "devDependencies": {
+    "code-surfer": "^3.0.0",
+    "mdx-deck": "^3.0.13"
+  },
+  "resolutions": {
+    "mdx-deck/**/gatsby": "2.18.4"
+  }
+}
